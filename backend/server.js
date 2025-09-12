@@ -9,6 +9,8 @@ import 'dotenv/config'
 import cartRouter from "./routes/cartRoute.js"
 import orderRouter from "./routes/orderRoute.js"
 
+console.log("DEBUG: process.env keys =>", Object.keys(process.env));
+dotenv.config(); 
 
 // app config
 const app = express()
@@ -19,6 +21,7 @@ app.use(express.json())
 app.use(cors())
 
 // db connection
+console.log("Loaded MONGO_URL:", process.env.MONGO_URL);
 connectDB();
 
 // api endpoints
@@ -29,6 +32,7 @@ app.use("/api/cart",cartRouter)
 app.use("/api/order",orderRouter)
 
 
+dotenv.config();  // ✅ load .env here
 
 app.get("/",(req,res)=>{
     res.send("API Working")

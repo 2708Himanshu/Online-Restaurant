@@ -1,11 +1,20 @@
-import mongoose from 'mongoose';
+// backend/config/db.js
+import mongoose from "mongoose";
 
 export const connectDB = async () => {
   try {
-    const conn = await mongoose.connect(process.env.MONGO_URL); // Remove deprecated options
-    console.log(`Database Connected`);
+    if (!process.env.MONGO_URL) {
+      throw new Error("MONGO_URL is not defined in .env file");
+    }
+
+    const conn = await mongoose.connect(process.env.MONGO_URL, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+
+    console.log(`✅ Database Connected: ${conn.connection.host}`);
   } catch (error) {
-    console.error(`Database Connection Failed: ${error.message}`);
+    console.error(`❌ Database Connection Failed: ${error.message}`);
     process.exit(1);
   }
 };
