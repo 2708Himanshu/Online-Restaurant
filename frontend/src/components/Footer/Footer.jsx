@@ -46,13 +46,13 @@ const Footer = () => {
                     <h2>GET IN TOUCH</h2>
                     <ul>
                         <li>+1-212-456-7890</li>
-                        <li>contact@hangry.com</li>
+                        <li>contact@OnlineRest.com</li>
                     </ul>
                 </div>
             </div>
             <hr />
             <p className="footer-copyright">
-                Copyright 2024 © Hangry.com - All rights reserved.
+                Copyright 2024 © OnlineRest.com - All rights reserved.
             </p>
         </div>
     );

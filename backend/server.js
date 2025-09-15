@@ -8,6 +8,7 @@ import userRouter from "./routes/userRoute.js"
 import 'dotenv/config'
 import cartRouter from "./routes/cartRoute.js"
 import orderRouter from "./routes/orderRoute.js"
+import path from "path";
 
 console.log("DEBUG: process.env keys =>", Object.keys(process.env));
 dotenv.config(); 
@@ -16,6 +17,7 @@ dotenv.config();
 const app = express()
 const port = process.env.PORT || 4000
 
+const _dirname=path.resolve();
 // middleware
 app.use(express.json())
 app.use(cors())
@@ -31,7 +33,10 @@ app.use("/api/user",userRouter)
 app.use("/api/cart",cartRouter)
 app.use("/api/order",orderRouter)
 
-
+app.use(express.static(path.join(_dirname, "/frontend/dist")));
+app.get('*',(_,res)=>{
+    res.sendFile(path.resolve(_dirname,"frontend","dist","index.html"));
+})
 dotenv.config();  // ✅ load .env here
 
 app.get("/",(req,res)=>{

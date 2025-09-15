@@ -1,6 +1,6 @@
-# Hangry
+# Online Restaurant
 
-Hangry is a full-stack web application built using the MERN (MongoDB, Express.js, React, Node.js) stack. It aims to provide users with a smooth and interactive experience to explore and order food when they're feeling "hangry" (hungry + angry).
+Online Reataurant is a full-stack web application built using the MERN (MongoDB, Express.js, React, Node.js) stack. It aims to provide users with a smooth and interactive experience to explore and order food when they're feeling Hungry.
 
 ## Tech Stack
 
@@ -29,7 +29,7 @@ Hangry is a full-stack web application built using the MERN (MongoDB, Express.js
 
 ## Live-Link
 
-- You can view the live link [here.](https://hangry-frontend.onrender.com/)
+- You can view the live link [here.]()
 
 ## Features
 
@@ -53,13 +53,13 @@ Hangry is a full-stack web application built using the MERN (MongoDB, Express.js
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/aayushai/Hangry.git
+    git clone https://github.com/2708Himanshu/OnlineRest.git
     ```
 
 2. Navigate to the project directory:
 
     ```bash
-    cd Hangry
+    cd OnlineRest
     ```
 
 3. Install dependencies for both frontend and backend:
