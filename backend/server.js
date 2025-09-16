@@ -43,9 +43,9 @@ app.get("/",(req,res)=>{
     res.send("API Working")
 })
 
-app.listen(port,()=>{
-    console.log(`Server Started on http://localhost:${port}`)
-})
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, "0.0.0.0", () => console.log(`Server running on port ${PORT}`));
+
 
 // YOU CAN SAVE UR DATABASE IN THIS COMMENT IF U WANT --> 
 
